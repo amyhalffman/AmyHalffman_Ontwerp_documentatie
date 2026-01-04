@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    
+<header class="site-header">
+  <p class="student-info">
+    <strong>Amy Halffman</strong> – 1GDM2
+  </p>
+</header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Portfolio</title>
+
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/flexboxes.css">
+  <link rel="stylesheet" href="assets/nav.css">
+  <link rel="stylesheet" href="assets/typography.css">
+  <link href="dist/output.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- Navigatie -->
+    <nav class="top-nav">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+                <span class="tooltip">Startpagina van mijn portfolio</span>
+            </li>
+            <li>
+                <a href="Week1.html">Week 1</a>
+                <span class="tooltip">Low-fi schetsen</span>
+            </li>
+            <li>
+                <a href="Week2.html">Week 2</a>
+                <span class="tooltip">Low-fi schetsen verbeterd</span>
+            </li>
+            <li>
+                <a href="Week3.html">Week 3</a>
+                <span class="tooltip">Mid-fi schetsen</span>
+            </li>
+            <li>
+                <a href="Week4.html" class="active">Week 4</a>
+                <span class="tooltip">Figma schermen in ChatGPT</span>
+            </li>
+            <li>
+                <a href="Week5.html">Week 5</a>
+                <span class="tooltip">Introductie Visual Studio Code</span>
+            </li>
+            <li>
+                <a href="Week6.html">Week 6</a>
+                <span class="tooltip">Interactieve schermen maken</span>
+            </li>
+            <li>
+                <a href="Week7.html">Week 7</a>
+                <span class="tooltip">Verder werken aan mijn website </span>
+            </li>
+            <li>
+                <a href="Week8.html">Week 8</a>
+                <span class="tooltip">Figma schermen verder linken </span>
+            </li>
+            <li>
+                <a href="Week9.html">Week 9</a>
+                <span class="tooltip">Homepagina website verbeteren</span>
+            </li>
+            <li>
+                <a href="Week10.html">Week 10</a>
+                <span class="tooltip">Eindversies</span>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+   <div class="container">
+
+<h1 class="gradient-title">Figma schermen in ChatGPT - Week 4</h1>
+
+  <!-- Introductie in witte box -->
+  <div class="intro-box">
+    <p>
+      Hier zie je de schermen die ik heb laten genereren door ChatGPT. Er zijn wel duidelijke gelijkenissen met de borden die ik zelf heb ontworpen, maar ze zijn nog altijd wel verschillend. Ik heb ChatGPT gevraagd om de schermen na te maken en daarna heb ik meer specifieke vragen gesteld om sommige delen aan te passen. Hierdoor lijken de schermen uiteindelijk wel vrij hard op de originelen.
+Het overzichtsscherm lijkt wel het minst op het origineel. De rijen staan veel dichter op elkaar en de iconen ontbreken ook. Het perronscherm en de wagonschermen zijn daarentegen wel goed gelukt en lijken vrij hard op mijn eigen ontwerpen.
+<p>
+  </div>
+
+<div class="image-gallery" style="display: flex; gap: 16px; justify-content: flex-start; flex-wrap: wrap; align-items: flex-start;">
+  <img src="chatscherm4.png" alt="ChatGPT scherm 1" class="clickable-photo" style="max-width: 250px; width: auto; height: auto; object-fit: contain; border: none; border-radius: 12px; box-shadow: none;">
+  
+  <img src="chatscherm3.png" alt="ChatGPT scherm 2" class="clickable-photo" style="max-width: 250px; width: auto; height: auto; object-fit: contain; border: none; border-radius: 12px; box-shadow: none;">
+  
+  <img src="chatscherm2.png" alt="ChatGPT scherm 3" class="clickable-photo" style="max-width: 250px; width: auto; height: auto; object-fit: contain; border: none; border-radius: 12px; box-shadow: none;">
+  
+  <img src="chatscherm1.png" alt="ChatGPT scherm 4" class="clickable-photo" style="max-width: 250px; width: auto; height: auto; object-fit: contain; border: none; border-radius: 12px; box-shadow: none;">
+</div>
+
+
+  <!-- Twee boxen naast elkaar onder de foto's -->
+  <div class="two-columns reflection-section">
+
+    <!-- Linkerkolom -->
+    <div class="column">
+      <h2>📖 Wat heb ik geleerd?</h2>
+      <p>
+In week 4 hebben we de basisstructuur van Figma verder uitgediept door te werken met frames en secties.
+Ik heb geleerd dat frames de belangrijkste bouwblokken zijn. Het zijn niet zomaar "dozen", maar containers die bepalen hoe elementen zich gedragen en hoe de lay-out consistent blijft.   
+</div>
+
+
+    <!-- Rechterkolom: witte box met animatie -->
+    <div class="column reflection-box">
+      <h2>🪞 Mijn reflectie</h2>
+      <p>
+        Het gebruik van ChatGPT was leuk om te doen, maar ik merkte wel dat de AI niet altijd direct het verwachte resultaat gaf. Het was wel cruciaal om bijvragen te stellen, zodat je kleinere details kan aanpassen. Zo lijken de gegenereerde schermen al meer op de originele schermen.
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modal-img">
+  <div id="caption"></div>
+</div>
+
+<style>
+.image-container {
+    display: flex;
+    gap: 10px;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* scroll bij grote afbeeldingen */
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    height: auto; /* behouden van verhouding */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+</style>
+
+<script>
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const captionText = document.getElementById("caption");
+
+const photos = document.querySelectorAll(".clickable-photo");
+photos.forEach(photo => {
+  photo.onclick = function() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+});
+
+function closeModal() {
+  modal.style.display = "none";
+}
+</script>
+<!-- GRADIENT BOL (achter alles) -->
+<div id="gradient-ball"
+     style="
+        position: fixed;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, #ff6ec7, #ff6ec7, #ff6ec7);
+        filter: blur(150px);
+        left: 50%;
+        top: 50%;
+        z-index: -9999;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        opacity: 0.8;
+     ">
+</div>
+<h1 class="
+  text-4xl font-bold
+  bg-[linear-gradient(270deg,#4287ff_0%,#bf00ff_33%,#f500c4_66%,#4287ff_100%)]
+  bg-[length:300%_300%]
+  bg-clip-text
+  text-transparent
+  animate-gradient-linear
+">
+
+<script>
+    const ball = document.getElementById('gradient-ball');
+
+    window.addEventListener('mousemove', (e) => {
+        ball.style.left = e.clientX + 'px';
+        ball.style.top = e.clientY + 'px';
+    });
+</script>
+
+<footer class="site-footer">
+  <p>
+    Laatste versie van mijn:
+    <a href="https://github.com/amyhalffman/PortfolioPRTT" target="_blank" rel="noopener">
+      GitHub repository
+    </a>
+  </p>
+</footer>
+
+
+        </page>
+    </div>
+</body>
+</html>

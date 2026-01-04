@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Portfolio - Week 9</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/flexboxes.css">
+    <link rel="stylesheet" href="assets/nav.css">
+    <link rel="stylesheet" href="assets/typography.css">
+    <link href="dist/output.css" rel="stylesheet">
+
+    <style>
+        /* Tooltip styling */
+        .top-nav li {
+            position: relative;
+        }
+
+        .top-nav li .tooltip {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -35px; /* boven de knop */
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .top-nav li:hover .tooltip {
+            opacity: 1;
+        }
+
+        .top-nav li .tooltip-active {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Site-header -->
+    <header class="site-header">
+      <p class="student-info">
+        <strong>Amy Halffman</strong> – 1GDM2
+      </p>
+    </header>
+
+    <!-- Navigatie -->
+    <nav class="top-nav">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+                <span class="tooltip">Startpagina van mijn portfolio</span>
+            </li>
+            <li>
+                <a href="Week1.html">Week 1</a>
+                <span class="tooltip">Low-fi schetsen</span>
+            </li>
+            <li>
+                <a href="Week2.html">Week 2</a>
+                <span class="tooltip">Low-fi schetsen verbeterd</span>
+            </li>
+            <li>
+                <a href="Week3.html">Week 3</a>
+                <span class="tooltip">Mid-fi schetsen</span>
+            </li>
+            <li>
+                <a href="Week4.html">Week 4</a>
+                <span class="tooltip">Figma schermen in ChatGPT</span>
+            </li>
+            <li>
+                <a href="Week5.html">Week 5</a>
+                <span class="tooltip">Introductie Visual Studio Code</span>
+            </li>
+            <li>
+                <a href="Week6.html">Week 6</a>
+                <span class="tooltip">Interactieve schermen maken</span>
+            </li>
+            <li>
+                <a href="Week7.html">Week 7</a>
+                <span class="tooltip">Verder werken aan mijn website </span>
+            </li>
+            <li>
+                <a href="Week8.html">Week 8</a>
+                <span class="tooltip">Figma schermen verder linken </span>
+            </li>
+            <li>
+                <a href="Week9.html" class="active">Week 9</a>
+                <span class="tooltip">Homepagina website verbeteren</span>
+            </li>
+            <li>
+                <a href="Week10.html">Week 10</a>
+                <span class="tooltip">Eindversies</span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Container voor alle content -->
+    <div class="container">
+
+        <h1 class="gradient-title">Homepagina website verbeteren - Week 9</h1>
+
+        <!-- Introductie in witte box -->
+        <div class="intro-box">
+            <p>
+            In week 9 heb ik me vooral bezig gehouden met de layout van de website. De homepagina heb ik een header gegeven en de mapjes weggedaan. Ik heb ook info in mijn website gezet zoals wat ik elke week heb gedaan.
+            </p>
+        </div>
+
+        <!-- Image gallery -->
+        <div class="image-gallery flex flex-row gap-4 flex-wrap">
+            <img src="week9.1.png" alt="Homepagina" class="clickable-photo w-40 md:w-44 h-40 md:h-44 object-cover rounded-lg hover:scale-105 hover:shadow-lg transition-transform duration-300">
+            <img src="week9.2.png" alt="Knop" class="clickable-photo w-40 md:w-44 h-40 md:h-44 object-cover rounded-lg hover:scale-105 hover:shadow-lg transition-transform duration-300">
+            <img src="week9.3.png" alt="Menu" class="clickable-photo w-40 md:w-44 h-40 md:h-44 object-cover rounded-lg hover:scale-105 hover:shadow-lg transition-transform duration-300">
+        </div>
+
+        <!-- Twee boxen naast elkaar onder de foto's -->
+        <div class="two-columns reflection-section">
+
+            <!-- Linkerkolom -->
+            <div class="column">
+                <h2>📖 Wat heb ik gedaan?</h2>
+                <p>
+                Ik heb dus besloten om de layout te veranderen. Ik heb een navigatiebalk voor de weken gemaakt in plaats van de mapjes, mijn naam en groep vanboven toegevoegd, een footer gemaakt en ik heb ook de achtergrond verwijderd. Ook heb ik knoppen toegevoegd naar andere delen van een pagina, waar ik dan meer foto's laat zien van mijn ontwerpen. Op de homepagina zie je vanonder 3 knoppen, 1 met de PDF, en de andere 2 moet ik nog aanpassen naar andere pagina's.
+                </p>
+            </div>
+
+            <!-- Rechterkolom: witte box met animatie -->
+            <div class="column reflection-box">
+                <h2>🪞 Mijn reflectie</h2>
+                <p>
+                Het vormgeven van de website is vaak heel moeilijk verlopen. Er zijn heel veel dingen die kunnen mislopen en dat is vaak gebeurd bij mij. Nu dat mijn website meer vormkrijgt zie ik het een geheel worden, maar er missen nog dingen en er zitten zeker nog fouten in. Ik ben wel tevereden met hoe die er nu al uitziet, zeker voor iemand die een paar weken geleden niets van codering kende.
+                </p>
+            </div>
+
+        </div>
+
+    </div> <!-- einde container -->
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const captionText = document.getElementById("caption");
+
+    const photos = document.querySelectorAll(".clickable-photo");
+    photos.forEach(photo => {
+      photo.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      }
+    });
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+    </script>
+
+    <!-- GRADIENT BOL (achter alles) -->
+    <div id="gradient-ball"
+         style="
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, #ff6ec7, #ff6ec7, #ff6ec7);
+            filter: blur(150px);
+            left: 50%;
+            top: 50%;
+            z-index: -9999;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            opacity: 0.8;
+         ">
+    </div>
+
+    <script>
+        const ball = document.getElementById('gradient-ball');
+
+        window.addEventListener('mousemove', (e) => {
+            ball.style.left = e.clientX + 'px';
+            ball.style.top = e.clientY + 'px';
+        });
+    </script>
+
+    <footer class="site-footer">
+      <p>
+        Laatste versie van mijn:
+        <a href="https://github.com/amyhalffman/PortfolioPRTT" target="_blank" rel="noopener">
+          GitHub repository
+        </a>
+      </p>
+    </footer>
+
+</body>
+</html>

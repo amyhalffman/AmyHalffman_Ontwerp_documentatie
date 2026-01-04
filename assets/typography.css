@@ -1,0 +1,40 @@
+p{
+    margin-top: 0.5em;
+}
+h1{ 
+    font-size: 1,5em;
+    font-weight: lighter;
+}
+h2{ 
+    font-size: 0,5em;
+    font-weight: normal;
+    opacity: 1; 
+}
+.gradient-title {
+  background: linear-gradient(
+    270deg,
+    #4287ff 10%,
+    #bf00ff 20%,
+    #f500c4 30%
+  );
+  background-size: 300% 300%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  animation: gradientMove 6s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind 10</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/flexboxes.css">
+  <link rel="stylesheet" href="assets/nav.css">
+  <link rel="stylesheet" href="assets/typography.css">
+  
+  <link href="dist/output.css" rel="stylesheet">
+  
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen p-10">
+    <!-- NAVBAR -->
+    <nav id="navbar" class="bg-white shadow fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+
+            <!-- Logo -->
+            <div class="text-xl font-bold text-wlate-600">
+            <a href="index.html" data-link="home" >
+                <h1>BPHTML10TWNDJS</h1>
+            </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="nav-toggle" class="md:hidden text-2xl focus:outline-none">
+            ☰
+            </button>
+
+            <!-- Desktop links -->
+            <ul id="nav-links" class="hidden md:flex space-x-4 text-gray-700">
+            <li><a href="npm.html" data-link="home" class="nav-link hover:text-slate-100">NPM</a></li>
+            <li><a href="images.html" data-link="about" class="nav-link hover:text-slate-100">Images</a></li>
+            <li><a href="javascript.html" data-link="services" class="nav-link hover:text-slate-100">Javascript</a></li>
+            </ul>
+
+        </div>
+
+        <!-- Mobile dropdown -->
+        <ul id="nav-mobile"
+            class="hidden md:hidden flex flex-col space-y-2 pb-4 text-gray-700 font-medium overflow-hidden max-h-0 transition-all duration-300">
+            <li><a href="npm.html" data-link="home" class="nav-link hover:text-slate-100">NPM</a></li>
+            <li><a href="images.html" data-link="about" class="nav-link hover:text-slate-100">Images</a></li>
+            <li><a href="javascript.html" data-link="services" class="nav-link hover:text-slate-100">Javascript</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="max-w-4xl mx-auto px-4">
+      <section class="prose prose-neutral max-w-none mt-12 mb-6">
+      <h1 class="font-bold mb-12">How to Use Images in This Setup (Local + Netlify)</h1>
+
+      <p class="mt-6 font-bold">
+        Using images in a Tailwind + HTML project works much like any static site,
+        but the build process affects how images must be organized — especially when
+        deploying to Netlify.
+      </p>
+
+      <h1 class="mt-6">1. Place Images Inside Your Project Folder</h1>
+
+      <p>
+        Images must live in a folder that will be included in the final build. Two
+        common approaches are:
+      </p>
+
+      <div class="mt-4 mb-4 ml-4">
+
+        <div class="mb-6">
+          <h3>Option A — <code>public/</code> folder <span class=" text-red-500 animate-pulse">Prefered method</span></h3>
+
+          <pre><code>
+project/
+public/
+  images/
+    logo.png
+src/
+index.html
+        </code></pre>
+
+          <p>
+            Anything placed inside <code>public/</code> is copied directly into the
+            output build folder. This makes <code>public/</code> the safest place for
+            images when using Tailwind, Vite, Webpack, or other bundlers.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h3>Option B — <code>images/</code> next to HTML files</h3>
+
+          <pre><code>
+project/
+images/
+  hero.jpg
+index.html
+          </code></pre>
+
+          <p>
+            This works fine if you are not using a bundler. But in projects using Vite
+            or Webpack, images outside <code>public/</code> may require special
+            configuration. For this reason, <code>public/</code> is generally preferred.
+          </p>
+        </div>
+
+      </div>
+
+
+      <h1>2. Reference Images in HTML</h1>
+      <p>
+        For images in <code>public/images/</code>, use a leading slash so Netlify
+        serves them from the site root:
+      </p>
+
+      <pre><code>&lt;img src="/images/photo.jpg" alt="Photo"&gt;</code></pre>
+
+      <p>
+        Use standard relative paths if your images sit next to the HTML files:
+      </p>
+
+      <pre><code>&lt;img src="images/photo.jpg" alt="Photo"&gt;</code></pre>
+
+      </section>
+      <section class="prose prose-neutral max-w-none mt-12 mb-6">
+        <h1>3. Reference Images in CSS (Tailwind or Custom CSS)</h1>
+
+        <p>Traditional CSS background image:</p>
+
+        <pre><code>.hero {
+        background-image: url('/images/hero.jpg');
+      }</code></pre>
+
+        <p>Tailwind utility background image:</p>
+
+        <pre><code>&lt;div class="bg-[url('/images/hero.jpg')] h-64"&gt;&lt;/div&gt;</code></pre>
+
+        <p class="mt-6">
+          <strong>Note:</strong> Tailwind may purge unused classes. If a background
+          class is dynamically generated, safelist it in
+          <code>tailwind.config.js</code>.
+        </p>
+
+        <p class="font-bold mt-6">
+          Following these approaches ensures images work both locally and on Netlify.
+          Using the <code>public/</code> folder is the most reliable option, and
+          referencing images from the root (<code>/</code>) prevents broken paths in
+          production.
+        </p>
+      </section>
+    </div>
+    
+    <!-- SCRIPT for accordion toggle -->
+    <script>
+        document.querySelectorAll('.accordion-btn').forEach(button => {
+          button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+
+            content.classList.toggle('hidden');
+
+            // Update + / -
+            const icon = button.querySelector('span');
+            icon.textContent = content.classList.contains('hidden') ? '+' : '-';
+          });
+        });
+
+      const navToggle = document.getElementById("nav-toggle");
+      const navMobile = document.getElementById("nav-mobile");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const navbar = document.getElementById("navbar");
+
+      /* -------------------------
+        1) SLIDE-DOWN MOBILE MENU
+        ------------------------- */
+      navToggle.addEventListener("click", () => {
+        if (navMobile.classList.contains("hidden")) {
+          navMobile.classList.remove("hidden");
+          navMobile.style.maxHeight = navMobile.scrollHeight + "px";
+        } else {
+          navMobile.style.maxHeight = "0px";
+          setTimeout(() => navMobile.classList.add("hidden"), 300);
+        }
+      });
+
+      /* -------------------------
+        2) ACTIVE LINK HIGHLIGHTING
+        ------------------------- */
+      function setActiveLink(name) {
+        navLinks.forEach(link => {
+          if (link.dataset.link === name) {
+            link.classList.add("text-blue-600", "font-semibold");
+          } else {
+            link.classList.remove("text-blue-600", "font-semibold");
+          }
+        });
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          const page = link.dataset.link;
+          setActiveLink(page);
+        });
+      });
+
+      /* -------------------------
+        3) AUTO-HIDE ON SCROLL
+        ------------------------- */
+      let lastScrollTop = 0;
+
+      window.addEventListener("scroll", () => {
+        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollPos > lastScrollTop && scrollPos > 50) {
+          // scrolling down
+          navbar.style.transform = "translateY(-100%)";
+        } else {
+          // scrolling up
+          navbar.style.transform = "translateY(0)";
+        }
+
+        lastScrollTop = scrollPos <= 0 ? 0 : scrollPos;
+      });
+    </script>
+  
+</body>
+</html>

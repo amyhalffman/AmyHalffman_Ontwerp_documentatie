@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+
+    body {
+    background-color: #000000; 
+    color: #ff7be5; 
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden; 
+}
+
+/* Container styling */
+.container {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    max-width: 200vw;
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+/* Titel bovenaan */
+.title h1 {
+    font-family: 'Old+Standard+TT', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: none;
+    margin-top: 2em;
+}
+
+/* Navigatie knoppen */
+.vertical-buttons a {
+    font-size: 35px !important;
+    background-color: #ff4fb9; 
+    color: black; 
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.vertical-buttons a:hover {
+    background-color: white; 
+    color: black; 
+}
+
+.vertical-buttons a.active {
+    background-color: transparent;
+    color: black;
+}
+
+.vertical-buttons li {
+    margin-bottom: 8px;
+}
+
+/* Pagina opmaak */
+.page {
+    margin-left: 200px; /* ruimte voor navigatie */
+    padding: 20px;
+}
+
+/* ========================= */
+/* FOTO STYLING (GEFIXT) */
+/* ========================= */
+
+/* Enkele foto met tekst eronder */
+.main-photo {
+    height: 300px;      /* vaste hoogte i.p.v. breedte */
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: 30px 0;
+    border-radius: 12px;
+    object-fit: contain; /* geen uitrekken */
+}
+
+/* Meerdere foto’s naast elkaar (photo-row) */
+.photo-row {
+    display: flex;
+    flex-wrap: wrap;           /* foto’s gaan op een nieuwe regel als ze niet passen */
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Foto’s in een rij */
+.photo-row .main-photo {
+    max-height: 250px;         /* alle foto's krijgen ongeveer dezelfde hoogte */
+    width: auto;               /* breedte past zich aan zodat verhoudingen kloppen */
+    object-fit: contain;       /* voorkomt vervorming */
+    border-radius: 12px;
+}
+/* Foto’s in een rij (standaard grootte) */
+.photo-row .main-photo {
+    max-height: 250px;
+    width: auto;
+    margin-top: 5px;     /* meer ruimte boven de foto */
+    margin-bottom: 10px;  /* meer ruimte onder de foto */
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+/* Laatste foto iets groter maken */
+.photo-row .main-photo.last-photo {
+    max-height: 300px; /* groter dan de rest */
+}
+
+.site-header {
+    display: flex;
+    flex-direction: column;   /* DIT is de sleutel */
+    align-items: flex-start;
+    gap: 10px;
+    margin: 20px;
+}
+
+
+.student-info {
+  font-size: 16px;
+  color: #ffffffd7;
+}
+
+.back-home {
+  background-color: #ff4fb9;
+  color: black;
+  padding: 8px 14px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.back-home:hover {
+  background-color: white;
+}
+
+.site-footer {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #ffffffb0;
+}
+
+.site-footer a {
+  color: #ff4fb9;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+.pdf-download {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: #ff4fb9;
+  color: black;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pdf-download:hover {
+  background-color: white;
+}
+/* Horizontale navigatie bovenaan */
+.top-nav {
+    background-color: #ff4fb9; /* zelfde kleur als je verticale knoppen */
+    padding: 10px 0;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* knoppen gecentreerd */
+    margin: 0;
+    padding: 0;
+    gap: 15px; /* ruimte tussen knoppen */
+}
+
+.top-nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.top-nav ul li a:hover,
+.top-nav ul li a.active {
+    background-color: white;
+    color: black;
+}
+.page-header {
+  width: 100%;             /* de volledige breedte van de pagina */
+  height: 500px;           /* hoogte van je header, pas aan naar wens */
+  overflow: hidden;        /* voorkomt dat de afbeelding uit de box steekt */
+  margin-bottom: 20px;     /* ruimte tussen header en rest van content */
+  border-radius: 12px;     /* optioneel, afgeronde hoeken */
+}
+
+.header-photo {
+  width: 100%;             /* afbeelding vult de breedte */
+  height: 100%;            /* afbeelding vult de hoogte */
+  object-fit: cover;       /* vult container netjes zonder vervorming */
+  display: block;          /* geen extra witruimte */
+}
+/* Modal achtergrond */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  padding-top: 60px;
+}
+
+/* Vergrote afbeelding */
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+}
+
+/* Sluitknop */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Caption */
+#caption {
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  margin-top: 15px;
+}
+.clickable-photo {
+  width: auto;          /* breedte past zich aan */
+  max-width: 300px;     /* maximale breedte op de pagina */
+  height: auto;         /* hoogte past zich aan */
+  margin: 10px;         /* ruimte tussen foto’s */
+  border-radius: 12px;  /* optioneel, afgeronde hoeken */
+  cursor: pointer;      /* laat zien dat ze klikbaar zijn */
+}
+.column p {
+    margin-bottom: 20px; /* ruimte tussen alinea's */
+}
+.photo-row {
+    display: flex;
+    flex-wrap: wrap;        
+    justify-content: flex-start; 
+    gap: 20px;              
+}
+
+.photo-row img {
+    max-width: 300px;       /* maximale breedte van een afbeelding */
+    width: 100%;            /* vult de beschikbare ruimte tot max-width */
+    height: auto;           /* behoudt verhouding */
+    border-radius: 12px;
+    flex: 1 1 auto;         /* zorgt dat ze naast elkaar blijven */
+}
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolommen van gelijke breedte */
+    gap: 10px;                              /* Ruimte tussen de afbeeldingen */
+}
+
+.image-container img {
+    width: 100%;  /* Vul de grid-cel volledig */
+    height: auto;
+}
+.two-columns .column {
+  background-color: #f5f5f5;
+  color: #111;
+  padding: 2rem;
+  border-radius: 16px;
+  border-left: 6px solid #ff4fc3; /* roze rand voor ALLE kolommen */
+}
+
+/* Reflectie extra nadruk */
+.reflection-box {
+  background-color: #ffffff;
+}
+/* CSS */
+.animated-btn {
+  background-color: #ff4fc3; /* groene achtergrond */
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* zorgt voor een vloeiende overgang */
+}
+
+.animated-btn:hover {
+  background-color: #ff4fc3; /* iets donkerder groen bij hover */
+  transform: scale(1.1); /* knop groeit iets */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* subtiele schaduw */
+}
+
+.animated-btn {
+  background-color: #ff4fc3;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.animated-btn:hover {
+  background-color: #ff4fc3;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+/* Witte boxen: intro en reflectie */
+.intro-box,
+.reflection-box {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);           /* witte achtergrond */
+  border-left: 4px solid #ff4fc3;   /* roze rand alleen aan de linkerkant */
+  padding: 20px;
+  border-radius: 8px;                /* afgeronde hoeken */
+  box-shadow: 0 5px 15px #ff4fc400; /* subtiele schaduw */
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  
+  color: black !important;           /* zwarte tekst forceren */
+}
+
+.intro-box,
+.reflection-box {
+  color: black;
+}
+
+.intro-box h1,
+.intro-box h2,
+.intro-box h3,
+.reflection-box h1,
+.reflection-box h2,
+.reflection-box h3 {
+  font-weight: 600;
+}
+h1, h2, h3 {
+  font-weight: 700 !important;}
+
+.arrow {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 0.3s;
+}
+
+.arrow-btn:hover .arrow {
+  transform: translateX(6px);
+}
+/* Algemene schaduw voor alle kaders */
+.column,
+.intro-box,
+.reflection-box {
+  box-shadow: 0 4px 15px rgba(255, 79, 196, 0.807); /* subtiele roze schaduw rondom */
+  transition: all 0.3s ease; /* vloeiende overgang bij hover */
+  border-radius: 16px; /* afgeronde hoeken consistent houden */
+}
+
+/* Optioneel: hover-effect */
+.column:hover,
+.intro-box:hover,
+.reflection-box:hover {
+  box-shadow: 0 8px 25px rgba(255, 79, 196, 0.838); /* iets sterkere schaduw rondom */
+}
+
+/* Algemene foto-styling voor alle foto-rijen */
+.photo-row {
+  display: flex;         /* foto's naast elkaar */
+  gap: 20px;             /* ruimte tussen foto's */
+  flex-wrap: wrap;       /* op kleinere schermen naar volgende regel */
+  justify-content: flex-start;
+}
+
+.photo-row img,
+.clickable-photo {
+  flex: 1 1 calc(25% - 20px); /* vier foto's naast elkaar met gap correctie */
+  max-width: 350px;            /* voorkom dat ze te groot worden */
+  height: auto;
+  border-radius: 12px;
+}
+.intro-box, .reflection-box, .column {
+    margin-top: 20px;    /* ruimte boven de box */
+    margin-bottom: 40px; /* ruimte onder de box */
+}
+.two-columns {
+  align-items: flex-start;
+}
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.image-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 2px solid rgba(255,255,255,0.4);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+  border-color: white;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(7, 180px);
+  gap: 20px;
+}
+.image-gallery img::after {
+  content: "🔍";
+  /* position: absolute;  ❌ verwijderen */
+}
+.gradient-title {
+  background: linear-gradient(
+    to right,
+    #fa219c 0%,
+    #ff4cb4 25%,
+    #ff9adf 50%,
+    #ff5fef 75%,
+    #ff7ac7 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: left;
+  margin: 2rem 0;
+}
+/* RESPONSIVE SNELHULP VOOR MOBIEL */
+
+@media (max-width: 768px) {
+
+  /* Twee kolommen stapelen op mobiel */
+  .two-columns {
+    flex-direction: column;  /* kolommen onder elkaar */
+    gap: 1rem;               /* beetje ruimte tussen de boxen */
+  }
+
+  /* Kolommen vullen nu 100% van container */
+  .two-columns .column,
+  .two-columns .reflection-box {
+    width: 100%;              /* volle breedte van container */
+    min-width: 0;             /* overschrijft eventuele min-width */
+    padding-left: 1rem;       /* behoud kleine padding */
+    padding-right: 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Afbeeldingen schalen netjes met container */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Foto-rijen flex-wrap zodat ze niet uit elkaar vallen */
+  .flex {
+    flex-wrap: wrap;
+  }
+
+  /* Intro-box en andere containers blijven padding behouden */
+  .container {
+    width: 90%;               /* binnen desktop-container */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* Optioneel: kleinere lettergrootte op mobiel */
+  h1.gradient-title {
+    font-size: 1.8rem;       /* schaal de titel iets kleiner op mobiel */
+  }
+}
+/* NAVIGATIE RESPONSIVE */
+@media (max-width: 768px) {
+  .top-nav ul {
+    flex-direction: column;  /* menu-items onder elkaar */
+    align-items: flex-start; /* uitlijnen aan linkerzijde */
+    gap: 0.5rem;             /* kleine ruimte tussen links */
+    padding-left: 0;
+  }
+
+  .top-nav li {
+    margin-right: 0;          /* verwijdert desktop spacing */
+  }
+
+  .top-nav a {
+    display: block;           /* hele regel klikbaar */
+    width: 100%;
+  }
+}
+.rounded-gallery {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Zorgt dat alle foto's bovenaan uitgelijnd zijn */
+}
+
+.rounded-gallery img {
+  max-width: 250px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px; /* Maakt alleen deze foto's afgerond */
+  border: none;
+  box-shadow: none;
+}
+/* Tooltip styling */
+.top-nav li {
+    position: relative; /* nodig voor absolute positionering van tooltip */
+}
+
+.top-nav li .tooltip {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -35px; /* boven de knop */
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+/* Tooltip alleen zichtbaar bij hover over li */
+.top-nav li:hover .tooltip {
+    opacity: 1;
+}

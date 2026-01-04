@@ -1,0 +1,75 @@
+/* Navigation as "folders" */
+
+/* Container voor alle knoppen */
+.vertical-buttons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 378px); /* 3 knoppen per rij van ~10 cm */
+    gap: 20px;
+    justify-content: start; /* links uitlijnen */
+    position: relative; /* voor pseudo-elementen zoals ::before */
+}
+
+/* Home-knop bovenaan, volledige eerste rij */
+.vertical-buttons li:first-child {
+    grid-column: 1 / 4; /* Home neemt de hele rij bovenaan */
+}
+
+/* Home-knop kleiner maken als deze niet actief is (op week-pagina) */
+.vertical-buttons li:first-child a:not(.active) {
+    width: 200px; /* kleinere breedte voor Home */
+    height: 50px; /* kleinere hoogte */
+    padding: 15px;
+    font-size: 12px !important;
+}
+
+/* Algemene stijl voor alle knoppen */
+.vertical-buttons li a {
+    display: block;
+    background-color: #ff4fb9;
+    color: black;
+    text-decoration: none;
+    width: 378px; /* standaard breedte van ~10 cm */
+    height: 100px; /* standaard hoogte */
+    padding: 30px 15px 15px 15px;
+    border-radius: 0 12px 12px 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px !important;
+    font-weight: 600;
+    transition: 0.2s ease;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative; /* nodig voor ::before */
+}
+
+/* Verberg pseudo-element (::before) voor alle week-knoppen */
+.vertical-buttons li:not(:first-child)::before {
+    display: none;
+}
+
+/* Het map-tabje voor Home */
+.vertical-buttons li:first-child::before {
+    content: attr(data-title);
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: #ff86d0;
+    padding: 4px 10px;
+    border-radius: 10px 10px 0 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Hover effect voor alle knoppen, inclusief week 1 t/m 9 */
+.vertical-buttons li a:hover {
+    background-color: #ff2ea7;
+    transform: translateX(3px);
+}
+
+/* Actieve knop achtergrondkleur */
+.vertical-buttons a.active {
+    background-color: #ff4fb9;
+}
